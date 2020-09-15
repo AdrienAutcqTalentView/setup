@@ -1,5 +1,6 @@
-title: Slate theme
-description: Slate is a theme for GitHub Pages.
+title: TalentView install and setup
+description: Set up you developer environment!
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-slate
+port: 5000
