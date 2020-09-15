@@ -1,123 +1,191 @@
----
-layout: default
----
+# Installs to run TalentView locally
+## Apps to install
+- Xcode (from AppStore)
+- Google Chrome (as a suggested browser)
+- Sublime Text (as a suggested IDE)
+## IDE configuration
+This section is useful only if you intend to use **Sublime Text** as your IDE.
+First of all, you need to install the **Package Control** plugin. Then, type `CMD` + `SHIFT` + `P`, then `Package Control: Install Package` to open the package installation menu. Here are the interesting packages to work with when on a **AngularJS** project: 
+>A File Icon, All complete, Angular CLI, AngularJS, AngularJS snippets, Babel, BracketHighlighter, ColorPicker, CSS3, DocBlockr, Emmet, Git, GitGutter, JSCS-Formatter, JSPrettier, MarkdownPreview, Material Theme, Sass, SCSS, Sidebar Enhancement, Stylus, SublimeLinter, SublimeREPL, Terminal, TrailingSpaces.
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-[Link to another page](./another-page.html).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
+Finally, set up your configuration file to use the TalentView standard. Type `CMD` + `,` and paste the following on the user side:
+```json
+{
+  "auto_complete": true,
+  "auto_complete_commit_on_tab": true,
+  "auto_complete_delay": 30,
+  "bold_folder_labels": true,
+  "color_scheme": "Packages/Material Theme/schemes/Material-Theme-Palenight.tmTheme",
+  "draw_white_space": "all",
+  "ensure_newline_at_eof_on_save": true,
+  "folder_exclude_patterns":
+  [
+    "node_modules",
+    "jspm_packages",
+    "bower_components",
+    ".git",
+    ".sass-cache",
+    ".tmp"
+  ],
+  "font_size": 12.0,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+    "rulers":
+  [
+    80
+  ],
+  "tab_size": 2,
+  "theme": "Material-Theme.sublime-theme",
+  "translate_tabs_to_spaces": true
 }
 ```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+## Others
+### Pimp your terminal
+You can improve you terminal's colors and themes by using **Oh My Zsh**. Details [here](https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/ "link to website").
+### Homebrew
+Homebrew is MacOS' package manager. Install it by running:
 ```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+### Node version manager
+TalentVew's front apps use different **Node** versions. NVM (Node Version Manager) is useful to switch versions. [Click](https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc "link to website") to install.
+Create an environment variable to use the nvm command by pasting the following in your `~/.zshrc` file:
 ```
-
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+source $(brew --prefix nvm)/nvm.sh
 ```
-The final element.
+If the `~/.zshrc` file does not exist, create it.
+Then, install the Node versions used at **TalentView**:
+```
+nvm install 13.12.0
+nvm install 8.11.3
+```
+You can see the list of installed Node versions using:
+```
+nvm list
+```
+And set up your default Node version using:
+```
+nvm alias default 13.12.0
+```
+Finally, switch to another Node version with:
+```
+nvm use 13.12.0
+```
+### Ruby version manager
+Similarly to NVM, [RVM](https://rvm.io/rvm/install "Link to website") is the Ruby Version Manager. Install it by running:
+```
+\curl -sSL https://get.rvm.io | bash -s stable
+```
+Install the Ruby version used in the API:
+```
+rvm install ruby-2.5.0
+```
+Use `rvm list` to access the list of installed Ruby versions and `rvm use` to switch between versions.
+### PostgreSQL
+Install PostgreSQL:
+```
+brew install postgresql
+```
+Also install the PostgreSQL [app](https://postgresapp.com/ "link to website").
+## Run the TalentView apps locally
+### SSL certificates
+In your `/etc/hosts` file, paste the following:
+```
+# TalentView
+127.0.0.1 manage.talentview.dev
+127.0.0.1 api.talentview.dev
+127.0.0.1 admin.talentview.dev
+127.0.0.1 http://talentview.talentview.dev.io/
+```
+Ask for the SSL config files to another developper. Save them on your machine, for example under `~/local-ssh`. Copy the `server.crt` and `server.key` in each corresponding repository root folder, except for the API, for which they go under `config/ssl/`.
+Open the Trousseau d'accès -> Certificats, and place there the `rootCA.perm` files of each repository. Double-click on it -> Se fier -> Toujours approuver.
+### Mongo
+Install Mongo:
+```
+brew tap mongodb/brew
+brew install mongodb-community@4.4
+```
+View the services list:
+```
+brew services list
+```
+Start the service:
+```
+brew services start mongodb-community@4.4
+```
+Run Mongo:
+```
+mongod --dbpath /usr/local/var/mongodb
+```
+### API
+ View the gem list:
+```
+rvm gemset list
+```
+Install the gems:
+```
+gem install bundler
+bundle install
+```
+Create the `application.yml` file inside `config/` and ask another developper for its content.
+Create and populate the database:
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+Install and run the mail catcher:
+```
+gem install mailcatcher
+mailcatcher
+```
+It runs on port `1080`, you can view the emails sent by the app on [http://localhost:1080/](http://localhost:1080/).
+To run the API, you can either:
+- Use the rails command:
+```
+rails s -b 'ssl://api.talentview.dev:3000?key=config/ssl/server.key&cert=config/ssl/server.crt'
+```
+- Execute the `boot.sh` file (which contains the command above):
+```
+./boot.sh
+```
+In a second terminal, run the following command that handles slow processes of the API:
+```
+rails jobs:work
+```
+### Admin
+Create a `.dev` file at the root of the project and ask another developper for its content.
+Make sure you are using the correct Node version (using nvm), then install the dependencies:
+```
+npm install
+```
+Run the project:
+```
+npm run dev
+```
+### Manager and Funnel
+Create a `.env.json` file at the root of the project and ask another developper for its content.
+Make sure you are using the correct Node version (using nvm), then install the dependencies:
+```
+npm install -g gulp
+```
+You might encounter an error caused by Xcode. If so, run the following command:
+```
+sudo xcode-select --switch /Library/Developer/CommandLineTools
+```
+You might also encounter an error caused by `jspm`. If so, create a token on GitHub and use it instead of the password when running the following command:
+```
+jspm registry config github
+```
+Run the project:
+```
+gulp serve
 ```

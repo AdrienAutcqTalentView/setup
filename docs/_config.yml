@@ -1,6 +1,6 @@
-title: Minimal theme
+title: Install and setup
 logo: /assets/img/logo.png
-description: Minimal is a theme for GitHub Pages.
+description: Installs to run TalentView locally.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-minimal
