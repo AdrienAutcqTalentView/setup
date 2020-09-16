@@ -123,3 +123,7 @@ Start the service:
 ```
 brew services start mongodb-community@4.4
 ```
+
+&nbsp;
+
+[Back to index](./index.md)  |  [Next: run TalentView](./run.md)

@@ -124,4 +124,6 @@ Start the service:
 brew services start mongodb-community@4.4
 ```
 
-[Back to index](./index.md)
+&nbsp;
+
+[Back to index](./index.md)  |  [Next: run TalentView](./run.md)
