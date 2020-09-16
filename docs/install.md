@@ -123,3 +123,5 @@ Start the service:
 ```
 brew services start mongodb-community@4.4
 ```
+
+[Back to index](./index.md)
