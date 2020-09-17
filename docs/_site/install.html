@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=93a26938eea5344f25fdfc4263eb538750cce56d">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=888cb9f47d0125f3d70cddffe7cad1008cc64fc4">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Installs to run TalentView locally | TalentView install and setup</title>
@@ -29,17 +29,17 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           
-            <a id="forkme_banner" href="https://github.com/AdrienAutcqTalentView/test">View on GitHub</a>
+            <!-- <a id="forkme_banner" href="https://github.com/AdrienAutcqTalentView/test">View on GitHub</a> -->
           
 
           <h1 id="project_title">TalentView install and setup</h1>
           <h2 id="project_tagline">Set up you developer environment!</h2>
 
           
-            <section id="downloads">
+            <!-- <section id="downloads">
               <a class="zip_download_link" href="https://github.com/AdrienAutcqTalentView/test/zipball/gh-pages">Download this project as a .zip file</a>
               <a class="tar_download_link" href="https://github.com/AdrienAutcqTalentView/test/tarball/gh-pages">Download this project as a tar.gz file</a>
-            </section>
+            </section> -->
           
         </header>
     </div>
@@ -51,11 +51,19 @@
 
 <h2 id="apps-to-install">Apps to install</h2>
 
+<p>If you just received an out-of-the-box Mac, you need a few apps:</p>
+
 <ul>
   <li>Xcode (from AppStore)</li>
   <li>Google Chrome (as a suggested browser)</li>
   <li>Sublime Text (as a suggested IDE)</li>
 </ul>
+
+<h2 id="homebrew">Homebrew</h2>
+
+<p>Homebrew is MacOS’ package manager. Install it by running:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+</code></pre></div></div>
 
 <h2 id="ide-configuration">IDE configuration</h2>
 
@@ -98,71 +106,24 @@ First of all, you need to install the <strong>Package Control</strong> plugin. T
   </span><span class="nl">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <h2 id="others">Others</h2>
 
-<h3 id="pimp-your-terminal">Pimp your terminal</h3>
+<h3 id="postman">Postman</h3>
 
-<p>You can improve you terminal’s colors and themes by using <strong>Oh My Zsh</strong>. Details <a href="https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/" title="link to website">here</a>.</p>
+<p>Postman is usefull to test the web services coming from the API. You can download it from <a href="&quot;https://www.postman.com/downloads/&quot;" target="_blank">here</a>.</p>
 
-<h3 id="homebrew">Homebrew</h3>
+<h3 id="pimp-your-terminal-optionnal">Pimp your terminal (optionnal)</h3>
 
-<p>Homebrew is MacOS’ package manager. Install it by running:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-</code></pre></div></div>
-<h3 id="node-version-manager">Node version manager</h3>
+<p>You can improve you terminal’s colors and themes by using <strong>Oh My Zsh</strong>. Details <a href="https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/" title="link to website" target="_blank">here</a>.</p>
 
-<p>TalentVew’s front apps use different <strong>Node</strong> versions. NVM (Node Version Manager) is useful to switch versions. <a href="https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc" title="link to website">Click</a> to install.
-Create an environment variable to use the nvm command by pasting the following in your <code class="language-plaintext highlighter-rouge">~/.zshrc</code> file:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] &amp;&amp; \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-source $(brew --prefix nvm)/nvm.sh
-</code></pre></div></div>
-<p>If the <code class="language-plaintext highlighter-rouge">~/.zshrc</code> file does not exist, create it.
-Then, install the Node versions used at <strong>TalentView</strong>:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install 13.12.0
-nvm install 8.11.3
-</code></pre></div></div>
-<p>You can see the list of installed Node versions using:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm list
-</code></pre></div></div>
-<p>And set up your default Node version using:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm alias default 13.12.0
-</code></pre></div></div>
-<p>Finally, switch to another Node version with:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm use 13.12.0
-</code></pre></div></div>
-<h3 id="ruby-version-manager">Ruby version manager</h3>
+<h3 id="team-communication-tools">Team communication tools</h3>
 
-<p>Similarly to NVM, <a href="https://rvm.io/rvm/install" title="Link to website">RVM</a> is the Ruby Version Manager. Install it by running:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\curl -sSL https://get.rvm.io | bash -s stable
-</code></pre></div></div>
-<p>Install the Ruby version used in the API:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install ruby-2.5.0
-</code></pre></div></div>
-<p>Use <code class="language-plaintext highlighter-rouge">rvm list</code> to access the list of installed Ruby versions and <code class="language-plaintext highlighter-rouge">rvm use</code> to switch between versions.</p>
-
-<h3 id="postgresql">PostgreSQL</h3>
-
-<p>Install PostgreSQL:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install postgresql
-</code></pre></div></div>
-<p>Also install the PostgreSQL <a href="https://postgresapp.com/" title="link to website">app</a>.</p>
-
-<h3 id="mongo">Mongo</h3>
-
-<p>Install Mongo:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap mongodb/brew
-brew install mongodb-community@4.4
-</code></pre></div></div>
-<p>View the services list:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services list
-</code></pre></div></div>
-<p>Start the service:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start mongodb-community@4.4
-</code></pre></div></div>
+<p>At <strong>TalentView</strong>, we use the following communication tools:</p>
+<ul>
+  <li>Slack</li>
+  <li>Discord</li>
+</ul>
 
 <p> </p>
 
@@ -170,7 +131,7 @@ brew install mongodb-community@4.4
   <tbody>
     <tr>
       <td><a href="/">Back to index</a></td>
-      <td><a href="/run.html">Next: run TalentView</a></td>
+      <td><a href="/clone-repos.html">Next: cloning repositories</a></td>
     </tr>
   </tbody>
 </table>

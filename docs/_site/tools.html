@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=888cb9f47d0125f3d70cddffe7cad1008cc64fc4">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Tools | TalentView install and setup</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Set up you developer environment!" />
+<meta property="og:description" content="Set up you developer environment!" />
+<link rel="canonical" href="http://localhost:5000/tools.html" />
+<meta property="og:url" content="http://localhost:5000/tools.html" />
+<meta property="og:site_name" content="TalentView install and setup" />
+<script type="application/ld+json">
+{"url":"http://localhost:5000/tools.html","headline":"Tools","description":"Set up you developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <!-- <a id="forkme_banner" href="https://github.com/AdrienAutcqTalentView/test">View on GitHub</a> -->
+          
+
+          <h1 id="project_title">TalentView install and setup</h1>
+          <h2 id="project_tagline">Set up you developer environment!</h2>
+
+          
+            <!-- <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/AdrienAutcqTalentView/test/zipball/gh-pages">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/AdrienAutcqTalentView/test/tarball/gh-pages">Download this project as a tar.gz file</a>
+            </section> -->
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="tools">Tools</h1>
+
+<h2 id="node">Node</h2>
+
+<p>Node is used to run JavaScript applications.</p>
+
+<h3 id="nvm">NVM</h3>
+
+<p>TalentVew’s front apps use different <strong>Node</strong> versions. NVM (Node Version Manager) is useful to switch versions. <a href="https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc" title="link to website" target="_blank">Click</a> and install.</p>
+
+<h3 id="creating-an-environment-variable">Creating an environment variable</h3>
+
+<p>Create an environment variable to use the nvm command by pasting the following in your <code class="language-plaintext highlighter-rouge">~/.zshrc</code> file:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] &amp;&amp; \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+source $(brew --prefix nvm)/nvm.sh
+</code></pre></div></div>
+<p>If the <code class="language-plaintext highlighter-rouge">~/.zshrc</code> file does not exist, create it.</p>
+
+<h3 id="node-versions">Node versions</h3>
+
+<p>Then, install the Node versions used at <strong>TalentView</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install 13.12.0
+nvm install 8.11.3
+</code></pre></div></div>
+<p>You can see the list of installed Node versions using:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm list
+</code></pre></div></div>
+<p>And set up your default Node version using:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm alias default 13.12.0
+</code></pre></div></div>
+<p>Finally, switch to another Node version with:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm use 13.12.0
+</code></pre></div></div>
+
+<h2 id="ruby">Ruby</h2>
+
+<p>Ruby is used for the API. Similarly to NVM, <a href="https://rvm.io/rvm/install" title="Link to website" target="_blank">RVM</a> is the Ruby Version Manager. Install it by running:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\curl -sSL https://get.rvm.io | bash -s stable
+</code></pre></div></div>
+<p>Install the Ruby version used in the API:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install ruby-2.5.0
+</code></pre></div></div>
+<p>Use <code class="language-plaintext highlighter-rouge">rvm list</code> to access the list of installed Ruby versions and <code class="language-plaintext highlighter-rouge">rvm use</code> to switch between versions.</p>
+
+<p> </p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/clone-repos.html">Back: cloning repositories</a></td>
+      <td><a href="/">Back to index</a></td>
+      <td><a href="/databases.html">Next: databases</a></td>
+    </tr>
+  </tbody>
+</table>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">TalentView install and setup maintained by <a href="https://github.com/AdrienAutcqTalentView">AdrienAutcqTalentView</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

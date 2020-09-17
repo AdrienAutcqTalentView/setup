@@ -8,17 +8,17 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=888cb9f47d0125f3d70cddffe7cad1008cc64fc4">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Where to get help | TalentView install and setup</title>
+<title>SSL certificates | TalentView install and setup</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Where to get help" />
+<meta property="og:title" content="SSL certificates" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Set up you developer environment!" />
 <meta property="og:description" content="Set up you developer environment!" />
-<link rel="canonical" href="http://localhost:5000/docs/SUPPORT.html" />
-<meta property="og:url" content="http://localhost:5000/docs/SUPPORT.html" />
+<link rel="canonical" href="http://localhost:5000/ssl.html" />
+<meta property="og:url" content="http://localhost:5000/ssl.html" />
 <meta property="og:site_name" content="TalentView install and setup" />
 <script type="application/ld+json">
-{"url":"http://localhost:5000/docs/SUPPORT.html","headline":"Where to get help","description":"Set up you developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:5000/ssl.html","headline":"SSL certificates","description":"Set up you developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -47,17 +47,32 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2 id="where-to-get-help">Where to get help</h2>
+        <h1 id="ssl-certificates">SSL certificates</h1>
 
-<p>If you think you’ve found a bug in the Slate theme, please <a href="https://github.com/pages-themes/slate/issues">check the existing issues</a>, and if no one has reported the problem, <a href="https://github.com/pages-themes/slate/issues/new">open a new issue</a>.</p>
+<p>In your <code class="language-plaintext highlighter-rouge">/etc/hosts</code> file, paste the following:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># TalentView
+127.0.0.1 manage.talentview.dev
+127.0.0.1 api.talentview.dev
+127.0.0.1 admin.talentview.dev
+127.0.0.1 http://talentview.talentview.dev.io/
+</code></pre></div></div>
+<p>Ask for the SSL config files to another developper. Save them on your machine, for example under <code class="language-plaintext highlighter-rouge">~/local-ssh</code>.</p>
 
-<p>If you have a general question about the theme, how to implement it, or how to customize it for your site you have two options:</p>
+<p>Copy the <code class="language-plaintext highlighter-rouge">server.crt</code> and <code class="language-plaintext highlighter-rouge">server.key</code> files in each corresponding repository root folder, except for the API, for which they go under <code class="language-plaintext highlighter-rouge">config/ssl/</code>.</p>
 
-<ol>
-  <li>Search for your query on <a href="https://support.github.com/?q=pages+Slate+theme"><code class="language-plaintext highlighter-rouge">support.github.com</code></a>, which will also look for similar topics on <a href="https://github.community/search?q=pages+Slate+theme"><code class="language-plaintext highlighter-rouge">github.community</code></a></li>
-  <li>Ask your question of the Jekyll community on <a href="https://talk.jekyllrb.com/">talk.jekyllrb.com</a></li>
-  <li><a href="https://github.com/contact?form%5Bsubject%5D=GitHub%20Pages%20theme%20pages-themes/slate">Contact GitHub Support</a></li>
-</ol>
+<p>Open the <strong>Keychain Access</strong> app → <em>My Certificates</em>, and place there the <code class="language-plaintext highlighter-rouge">rootCA.perm</code> files of each repository. Double-click on each certificate file → <em>Trust</em> → <em>Always trust</em>. Fill in your session password every time it is required.</p>
+
+<p> </p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/databases.html">Back: databases</a></td>
+      <td><a href="/">Back to index</a></td>
+      <td><a href="/run.html">Next: run the apps</a></td>
+    </tr>
+  </tbody>
+</table>
 
       </section>
     </div>

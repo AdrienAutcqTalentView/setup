@@ -2,9 +2,18 @@
 
 ## Apps to install
 
+If you just received an out-of-the-box Mac, you need a few apps:
+
 - Xcode (from AppStore)
 - Google Chrome (as a suggested browser)
 - Sublime Text (as a suggested IDE)
+
+## Homebrew
+
+Homebrew is MacOS' package manager. Install it by running:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
 
 ## IDE configuration
 
@@ -46,84 +55,23 @@ Finally, set up your configuration file to use the TalentView standard. Type `CM
   "translate_tabs_to_spaces": true
 }
 ```
+
 ## Others
 
-### Pimp your terminal
+### Postman
 
-You can improve you terminal's colors and themes by using **Oh My Zsh**. Details [here](https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/ "link to website").
+Postman is usefull to test the web services coming from the API. You can download it from [here]("https://www.postman.com/downloads/"){:target="_blank"}.
 
-### Homebrew
+### Pimp your terminal (optionnal)
 
-Homebrew is MacOS' package manager. Install it by running:
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
-### Node version manager
+You can improve you terminal's colors and themes by using **Oh My Zsh**. Details [here](https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/ "link to website"){:target="_blank"}.
 
-TalentVew's front apps use different **Node** versions. NVM (Node Version Manager) is useful to switch versions. [Click](https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc "link to website") to install.
-Create an environment variable to use the nvm command by pasting the following in your `~/.zshrc` file:
-```
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-source $(brew --prefix nvm)/nvm.sh
-```
-If the `~/.zshrc` file does not exist, create it.
-Then, install the Node versions used at **TalentView**:
-```
-nvm install 13.12.0
-nvm install 8.11.3
-```
-You can see the list of installed Node versions using:
-```
-nvm list
-```
-And set up your default Node version using:
-```
-nvm alias default 13.12.0
-```
-Finally, switch to another Node version with:
-```
-nvm use 13.12.0
-```
-### Ruby version manager
+### Team communication tools
 
-Similarly to NVM, [RVM](https://rvm.io/rvm/install "Link to website") is the Ruby Version Manager. Install it by running:
-```
-\curl -sSL https://get.rvm.io | bash -s stable
-```
-Install the Ruby version used in the API:
-```
-rvm install ruby-2.5.0
-```
-Use `rvm list` to access the list of installed Ruby versions and `rvm use` to switch between versions.
-
-### PostgreSQL
-
-Install PostgreSQL:
-```
-brew install postgresql
-```
-Also install the PostgreSQL [app](https://postgresapp.com/ "link to website").
-
-### Mongo
-
-Install Mongo:
-```
-brew tap mongodb/brew
-brew install mongodb-community@4.4
-```
-View the services list:
-```
-brew services list
-```
-Start the service:
-```
-brew services start mongodb-community@4.4
-```
+At **TalentView**, we use the following communication tools:
+- Slack
+- Discord
 
 &nbsp;
 
-[Back to index](./index.md)  |  [Next: run TalentView](./run.md)
+[Back to index](./index.md)  |  [Next: cloning repositories](./clone-repos.md)

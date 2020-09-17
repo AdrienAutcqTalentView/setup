@@ -8,17 +8,17 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=888cb9f47d0125f3d70cddffe7cad1008cc64fc4">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Where to get help | TalentView install and setup</title>
+<title>Databases | TalentView install and setup</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Where to get help" />
+<meta property="og:title" content="Databases" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Set up you developer environment!" />
 <meta property="og:description" content="Set up you developer environment!" />
-<link rel="canonical" href="http://localhost:5000/docs/SUPPORT.html" />
-<meta property="og:url" content="http://localhost:5000/docs/SUPPORT.html" />
+<link rel="canonical" href="http://localhost:5000/databases.html" />
+<meta property="og:url" content="http://localhost:5000/databases.html" />
 <meta property="og:site_name" content="TalentView install and setup" />
 <script type="application/ld+json">
-{"url":"http://localhost:5000/docs/SUPPORT.html","headline":"Where to get help","description":"Set up you developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:5000/databases.html","headline":"Databases","description":"Set up you developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -47,17 +47,45 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2 id="where-to-get-help">Where to get help</h2>
+        <h1 id="databases">Databases</h1>
 
-<p>If you think you’ve found a bug in the Slate theme, please <a href="https://github.com/pages-themes/slate/issues">check the existing issues</a>, and if no one has reported the problem, <a href="https://github.com/pages-themes/slate/issues/new">open a new issue</a>.</p>
+<p>Two types of databases are used in <strong>TalentView</strong>:</p>
+<ul>
+  <li>A SQL database for companies, users, campaigns, candidacies,…</li>
+  <li>A NoSQL database for messages, comments,…</li>
+</ul>
 
-<p>If you have a general question about the theme, how to implement it, or how to customize it for your site you have two options:</p>
+<h2 id="postgresql">PostgreSQL</h2>
 
-<ol>
-  <li>Search for your query on <a href="https://support.github.com/?q=pages+Slate+theme"><code class="language-plaintext highlighter-rouge">support.github.com</code></a>, which will also look for similar topics on <a href="https://github.community/search?q=pages+Slate+theme"><code class="language-plaintext highlighter-rouge">github.community</code></a></li>
-  <li>Ask your question of the Jekyll community on <a href="https://talk.jekyllrb.com/">talk.jekyllrb.com</a></li>
-  <li><a href="https://github.com/contact?form%5Bsubject%5D=GitHub%20Pages%20theme%20pages-themes/slate">Contact GitHub Support</a></li>
-</ol>
+<p>Install PostgreSQL:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install postgresql
+</code></pre></div></div>
+<p>Also install the PostgreSQL <a href="https://postgresapp.com/" title="link to website" target="_blank">app</a>.</p>
+
+<h2 id="mongo">Mongo</h2>
+
+<p>Install Mongo:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap mongodb/brew
+brew install mongodb-community@4.4
+</code></pre></div></div>
+<p>View the services list:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services list
+</code></pre></div></div>
+<p>Start the service:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start mongodb-community@4.4
+</code></pre></div></div>
+
+<p> </p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/tools.html">Back: tools</a></td>
+      <td><a href="/">Back to index</a></td>
+      <td><a href="/ssl.html">Next: SSL certificates</a></td>
+    </tr>
+  </tbody>
+</table>
 
       </section>
     </div>

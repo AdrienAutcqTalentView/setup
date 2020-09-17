@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=93a26938eea5344f25fdfc4263eb538750cce56d">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=888cb9f47d0125f3d70cddffe7cad1008cc64fc4">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Run the TalentView apps locally | TalentView install and setup</title>
@@ -29,17 +29,17 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           
-            <a id="forkme_banner" href="https://github.com/AdrienAutcqTalentView/test">View on GitHub</a>
+            <!-- <a id="forkme_banner" href="https://github.com/AdrienAutcqTalentView/test">View on GitHub</a> -->
           
 
           <h1 id="project_title">TalentView install and setup</h1>
           <h2 id="project_tagline">Set up you developer environment!</h2>
 
           
-            <section id="downloads">
+            <!-- <section id="downloads">
               <a class="zip_download_link" href="https://github.com/AdrienAutcqTalentView/test/zipball/gh-pages">Download this project as a .zip file</a>
               <a class="tar_download_link" href="https://github.com/AdrienAutcqTalentView/test/tarball/gh-pages">Download this project as a tar.gz file</a>
-            </section>
+            </section> -->
           
         </header>
     </div>
@@ -47,27 +47,29 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2 id="run-the-talentview-apps-locally">Run the TalentView apps locally</h2>
+        <h1 id="run-the-talentview-apps-locally">Run the TalentView apps locally</h1>
 
-<h3 id="ssl-certificates">SSL certificates</h3>
-
-<p>In your <code class="language-plaintext highlighter-rouge">/etc/hosts</code> file, paste the following:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># TalentView
-127.0.0.1 manage.talentview.dev
-127.0.0.1 api.talentview.dev
-127.0.0.1 admin.talentview.dev
-127.0.0.1 http://talentview.talentview.dev.io/
-</code></pre></div></div>
-<p>Ask for the SSL config files to another developper. Save them on your machine, for example under <code class="language-plaintext highlighter-rouge">~/local-ssh</code>. Copy the <code class="language-plaintext highlighter-rouge">server.crt</code> and <code class="language-plaintext highlighter-rouge">server.key</code> in each corresponding repository root folder, except for the API, for which they go under <code class="language-plaintext highlighter-rouge">config/ssl/</code>.
-Open the Trousseau d’accès -&gt; Certificats, and place there the <code class="language-plaintext highlighter-rouge">rootCA.perm</code> files of each repository. Double-click on it -&gt; Se fier -&gt; Toujours approuver.</p>
+<h2 id="prerequisites">Prerequisites</h2>
 
 <h3 id="mongo">Mongo</h3>
 
 <p>Run Mongo:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongod --dbpath /usr/local/var/mongodb
 </code></pre></div></div>
 
-<h3 id="api">API</h3>
+<h3 id="mail-catcher">Mail catcher</h3>
+
+<p>With the mail catcher, you can view all the emails sent by the apps.</p>
+
+<p>Install and run the mail catcher:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install mailcatcher
+mailcatcher
+</code></pre></div></div>
+<p>It runs on port <code class="language-plaintext highlighter-rouge">1080</code> by default, you can view the emails sent by the app on <a href="http://localhost:1080/" target="_blank">http://localhost:1080/</a>.</p>
+
+<h2 id="api">API</h2>
 
 <p>View the gem list:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm gemset list
@@ -76,20 +78,17 @@ Open the Trousseau d’accès -&gt; Certificats, and place there the <code class
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler
 bundle install
 </code></pre></div></div>
-<p>Create the <code class="language-plaintext highlighter-rouge">application.yml</code> file inside <code class="language-plaintext highlighter-rouge">config/</code> and ask another developper for its content.
-Create and populate the database:</p>
+<p>Create the <code class="language-plaintext highlighter-rouge">application.yml</code> file inside <code class="language-plaintext highlighter-rouge">config/</code> and ask another developper for its content.</p>
+
+<p>Create and populate the database:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails db:create
 rails db:migrate
 rails db:seed
 </code></pre></div></div>
-<p>Install and run the mail catcher:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install mailcatcher
-mailcatcher
-</code></pre></div></div>
-<p>It runs on port <code class="language-plaintext highlighter-rouge">1080</code>, you can view the emails sent by the app on <a href="http://localhost:1080/">http://localhost:1080/</a>.
-To run the API, you can either:</p>
+
+<p>To run the API, you can either:</p>
 <ul>
-  <li>Use the rails command:
+  <li>Use the `rails command:
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails s -b 'ssl://api.talentview.dev:3000?key=config/ssl/server.key&amp;cert=config/ssl/server.crt'
 </code></pre></div>    </div>
   </li>
@@ -103,34 +102,67 @@ To run the API, you can either:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails jobs:work
 </code></pre></div></div>
 
-<h3 id="admin">Admin</h3>
+<p>The API is now fully running. You can test webservices using Postman.</p>
 
-<p>Create a <code class="language-plaintext highlighter-rouge">.dev</code> file at the root of the project and ask another developper for its content.
-Make sure you are using the correct Node version (using nvm), then install the dependencies:</p>
+<h2 id="admin">Admin</h2>
+
+<p>Copy the <code class="language-plaintext highlighter-rouge">.env.example</code> file into a new <code class="language-plaintext highlighter-rouge">.env</code> file at the root of the project and ask another developper to provide you with the content:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API_URL=
+AWS_S3_URL=
+AWS_S3_BUCKET=
+AWS_S3_REGION=
+CAMERATAG_APPLICATION_UUID=
+ENVIRONMENT=
+FILESTACK_API_KEY=
+FUNNEL_DOMAIN=
+MANAGE_URL=
+</code></pre></div></div>
+
+<p>Make sure you are using the correct Node version (13.12.0) using nvm, then install the dependencies:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
 </code></pre></div></div>
-<p>Run the project:</p>
+<p>Run the app:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run dev
 </code></pre></div></div>
 
-<h3 id="manager-and-funnel">Manager and Funnel</h3>
+<p>Go to <a href="&quot;https://admin.talentview.dev:4002&quot;" target="_blank">http://admin.talentview.test:4002</a>.</p>
 
-<p>Create a <code class="language-plaintext highlighter-rouge">.env.json</code> file at the root of the project and ask another developper for its content.
-Make sure you are using the correct Node version (using nvm), then install the dependencies:</p>
+<h2 id="manager-and-funnel">Manager and Funnel</h2>
+
+<p>The Manager and Funnel apps both run on the same version of Node (8.11.3), thus are run using the same commands.</p>
+
+<p>Create a <code class="language-plaintext highlighter-rouge">.env.json</code> file at the root of the project and ask another developper for its content.</p>
+
+<p>Make sure you are using the correct Node version using nvm, then install the dependencies:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g gulp
 </code></pre></div></div>
-<p>You might encounter an error caused by Xcode. If so, run the following command:</p>
+<p>You might encounter an error caused by Xcode. If so, run command below then reinstall the dependencies:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo xcode-select --switch /Library/Developer/CommandLineTools
 </code></pre></div></div>
-<p>You might also encounter an error caused by <code class="language-plaintext highlighter-rouge">jspm</code>. If so, create a token on GitHub and use it instead of the password when running the following command:</p>
+<p>You might also encounter an error caused by <code class="language-plaintext highlighter-rouge">jspm</code>. If so, create a <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token" title="link to tutorial" target="_blank">token</a> on GitHub and use it instead of the password when running the following command:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jspm registry config github
 </code></pre></div></div>
-<p>Run the project:</p>
+<p>Run the app:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gulp serve
 </code></pre></div></div>
+
+<p>Go to <a href="&quot;https://manage.talentview.dev:4001&quot;" target="_blank">https://manage.talentview.dev:4001</a> and <a href="&quot;https://talentview.talentview.dev.io:4000/&quot;" target="_blank">https://talentview.talentview.dev.io:4000</a>.</p>
+
 <p> </p>
 
-<p><a href="/">Back to index</a></p>
+<h1 id="congrats-you-reached-the-end-of-the-tutorial-">Congrats! You reached the end of the tutorial :)</h1>
+
+<p> </p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/ssl.html">Back: SSL certificates</a></td>
+      <td><a href="/">Return to index</a></td>
+    </tr>
+  </tbody>
+</table>
 
       </section>
     </div>
