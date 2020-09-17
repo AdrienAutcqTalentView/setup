@@ -1,11 +1,16 @@
 # Cloning the repositories
 
-Create a folder under which to store all the projects. Fox example: `~/dev/github/talentview/`.
+Create a folder under which to store all the projects, e.g.:
+
+```
+cd ~
+mkdir -p dev/github/talentview/
+```
 
 Then, for each repository:
 1. Go to the GitHub page and copy the cloning link.
 2. Open a terminal
-3. Navigate to your workspace folder, for example:
+3. Navigate to your workspace folder, e.g.:
 ```
 cd ~/dev/github/talentview/
 ```

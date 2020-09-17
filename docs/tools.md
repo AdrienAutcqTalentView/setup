@@ -2,11 +2,11 @@
 
 ## Node
 
-Node is used to run JavaScript applications.
+Node allows to run JavaScript applications. It is used for the three **TalentView** clients.
 
 ### NVM
 
-TalentVew's front apps use different **Node** versions. NVM (Node Version Manager) is useful to switch versions. [Click](https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc "link to website"){:target="_blank"} and install.
+TalentVew's front apps use different **Node** versions. NVM (Node Version Manager) is useful to handle several versions on your machine. [Click](https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc "link to website"){:target="_blank"} and install.
 
 ### Creating an environment variable
 

@@ -1,4 +1,4 @@
-# Installs to run TalentView locally
+# Basic installs
 
 ## Apps to install
 
@@ -18,7 +18,11 @@ Homebrew is MacOS' package manager. Install it by running:
 ## IDE configuration
 
 This section is useful only if you intend to use **Sublime Text** as your IDE.
-First of all, you need to install the **Package Control** plugin. Then, type `CMD` + `SHIFT` + `P`, then `Package Control: Install Package` to open the package installation menu. Here are the interesting packages to work with when on a **AngularJS** project: 
+
+First of all, you need to install the **Package Control** plugin. Then, type `CMD` + `SHIFT` + `P`, then `Package Control: Install Package` to open the package installation menu.
+
+Here are the interesting packages to work with when on a **AngularJS** project:
+
 >A File Icon, All complete, Angular CLI, AngularJS, AngularJS snippets, Babel, BracketHighlighter, ColorPicker, CSS3, DocBlockr, Emmet, Git, GitGutter, JSCS-Formatter, JSPrettier, MarkdownPreview, Material Theme, Sass, SCSS, Sidebar Enhancement, Stylus, SublimeLinter, SublimeREPL, Terminal, TrailingSpaces.
 
 Finally, set up your configuration file to use the TalentView standard. Type `CMD` + `,` and paste the following on the user side:
@@ -58,13 +62,13 @@ Finally, set up your configuration file to use the TalentView standard. Type `CM
 
 ## Others
 
-### Postman
+### Postman (optional)
 
 Postman is usefull to test the web services coming from the API. You can download it from [here]("https://www.postman.com/downloads/"){:target="_blank"}.
 
-### Pimp your terminal (optionnal)
+### Pimp your terminal (optional)
 
-You can improve you terminal's colors and themes by using **Oh My Zsh**. Details [here](https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/ "link to website"){:target="_blank"}.
+You can improve you terminal's colors and theme by using **Oh My Zsh**. Details [here](https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/ "link to website"){:target="_blank"}.
 
 ### Team communication tools
 
