@@ -74,4 +74,21 @@ At **TalentView**, we use the following communication tools:
 
 &nbsp;
 
-[Back to index](./index.md)  |  [Next: cloning repositories](./clone-repos.md)
+<div class="row">
+  <div class="col-xs-6">
+    <a
+      href="./index.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      &larr; Return to index
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-6">
+    <a
+      href="./clone-repos.html"
+      class="btn btn-light btn-lg btn-block">
+      Cloning repositories &rarr;
+    </a>
+  </div>
+</div>

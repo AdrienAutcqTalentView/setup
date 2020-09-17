@@ -56,4 +56,30 @@ Use `rvm list` to access the list of installed Ruby versions and `rvm use` to sw
 
 &nbsp;
 
-[Back: cloning repositories](./clone-repos.md)  |  [Back to index](./index.md)  |  [Next: databases](./databases.md)
+<div class="row">
+  <div class="col-xs-4">
+    <a
+      href="./clone-repos.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      &larr; Cloning repositories
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./index.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      Return to index
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./databases.html"
+      class="btn btn-light btn-lg btn-block">
+      Databases &rarr;
+    </a>
+  </div>
+</div>

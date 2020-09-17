@@ -30,4 +30,30 @@ brew services start mongodb-community@4.4
 
 &nbsp;
 
-[Back: tools](./tools.md)  |  [Back to index](./index.md)  |  [Next: SSL certificates](./ssl.md)
+<div class="row">
+  <div class="col-xs-4">
+    <a
+      href="./tools.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      &larr; Tools
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./index.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      Return to index
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./ssl.html"
+      class="btn btn-light btn-lg btn-block">
+      SSL certificates &rarr;
+    </a>
+  </div>
+</div>

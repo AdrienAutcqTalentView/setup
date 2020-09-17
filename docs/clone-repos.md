@@ -20,4 +20,30 @@ cd <repository-name>
 
 &nbsp;
 
-[Back: install](./install.md)  |  [Back to index](./index.md)  |  [Next: tools](./tools.md)
+<div class="row">
+  <div class="col-xs-4">
+    <a
+      href="./install.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      &larr; Install
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./index.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      Return to index
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./tools.html"
+      class="btn btn-light btn-lg btn-block">
+      Tools &rarr;
+    </a>
+  </div>
+</div>

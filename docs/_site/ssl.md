@@ -16,4 +16,30 @@ Open the **Keychain Access** app &rarr; *My Certificates*, and place there the `
 
 &nbsp;
 
-[Back: databases](./databases.md)  |  [Back to index](./index.md)  |  [Next: run the apps](./run.md)
+<div class="row">
+  <div class="col-xs-4">
+    <a
+      href="./databases.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      &larr; Databases
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./index.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      Return to index
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-4">
+    <a
+      href="./run.html"
+      class="btn btn-light btn-lg btn-block">
+      Run the apps &rarr;
+    </a>
+  </div>
+</div>

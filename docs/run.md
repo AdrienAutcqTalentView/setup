@@ -118,4 +118,23 @@ Go to [https://manage.talentview.dev:4001]("https://manage.talentview.dev:4001")
 
 &nbsp;
 
-[Back: SSL certificates](./ssl.md)  |  [Return to index](./index.md)
+<div class="row">
+  <div class="col-xs-6">
+    <a
+      href="./ssl.html"
+      type="button"
+      class="btn btn-light btn-lg btn-block">
+      &larr; SSL certificates
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-6">
+    <a
+      href="./index.html"
+      class="btn btn-light btn-lg btn-block">
+      Return to index
+    </a>
+  </div>
+</div>
+
+

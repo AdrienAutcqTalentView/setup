@@ -1,3 +1,4 @@
+@import url(bootstrap.min.css);
 .highlight table td { padding: 5px; }
 
 .highlight table pre { margin: 0; }
@@ -264,3 +265,4 @@ Small Device Styles
   h5 { font-size: 14px; }
   h6 { font-size: 12px; }
   code, pre { min-width: 240px; max-width: 320px; font-size: 11px; } }
+.logo-image { width: 20%; }
