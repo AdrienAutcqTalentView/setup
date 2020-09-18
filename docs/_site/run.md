@@ -12,12 +12,17 @@ mongod --dbpath /usr/local/var/mongodb
 
 ### Mail catcher
 
-With the mail catcher, you can view all the emails sent by the apps.
+With the mail catcher, you can view all the emails sent by the apps. This is useful to access validation links sent via email.
 
-Install and run the mail catcher:
+Install the mail catcher using:
 
 ```
 gem install mailcatcher
+```
+
+Run the mail catcher:
+
+```
 mailcatcher
 ```
 It runs on port `1080` by default, you can view the emails sent by the app on [http://localhost:1080/](http://localhost:1080/){:target="_blank"}.
@@ -25,18 +30,28 @@ It runs on port `1080` by default, you can view the emails sent by the app on [h
 
 ## API
 
-View the gem list:
+You can view the gem list with:
+
 ```
 rvm gemset list
 ```
-Install the gems:
+
+Install bundler to manage the API's gems:
+
 ```
 gem install bundler
+```
+
+Install the gems:
+
+```
 bundle install
 ```
+
 Create the `application.yml` file inside `config/` and ask another developper for its content.
 
 Create and populate the database:
+
 ```
 rails db:create
 rails db:migrate
@@ -44,7 +59,7 @@ rails db:seed
 ```
 
 To run the API, you can either:
-- Use the `rails command:
+- Use the `rails` command:
 ```
 rails s -b 'ssl://api.talentview.dev:3000?key=config/ssl/server.key&cert=config/ssl/server.crt'
 ```
@@ -58,7 +73,7 @@ In a second terminal, run the following command that handles slow processes of t
 rails jobs:work
 ```
 
-The API is now fully running. You can test webservices using Postman.
+The API is now fully running. You can test web services using *Postman*.
 
 ## Admin
 

@@ -5,20 +5,20 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=e11fce452fc2d1e4932170579ef8e41231da9804">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=351566b0d9c0b6a1a6469f81cd7e0ce0db3d2629">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Run the TalentView apps locally | TalentView install and setup</title>
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Run the TalentView apps locally" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Set up you developer environment!" />
-<meta property="og:description" content="Set up you developer environment!" />
+<meta name="description" content="Set up your developer environment!" />
+<meta property="og:description" content="Set up your developer environment!" />
 <link rel="canonical" href="http://localhost:5000/run.html" />
 <meta property="og:url" content="http://localhost:5000/run.html" />
 <meta property="og:site_name" content="TalentView install and setup" />
 <script type="application/ld+json">
-{"url":"http://localhost:5000/run.html","headline":"Run the TalentView apps locally","description":"Set up you developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://localhost:5000/run.html","headline":"Run the TalentView apps locally","description":"Set up your developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -37,7 +37,7 @@
           
 
           <h1 id="project_title">TalentView install and setup</h1>
-          <h2 id="project_tagline">Set up you developer environment!</h2>
+          <h2 id="project_tagline">Set up your developer environment!</h2>
 
           
             <!-- <section id="downloads">
@@ -64,27 +64,40 @@
 
 <h3 id="mail-catcher">Mail catcher</h3>
 
-<p>With the mail catcher, you can view all the emails sent by the apps.</p>
+<p>With the mail catcher, you can view all the emails sent by the apps. This is useful to access validation links sent via email.</p>
 
-<p>Install and run the mail catcher:</p>
+<p>Install the mail catcher using:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install mailcatcher
-mailcatcher
+</code></pre></div></div>
+
+<p>Run the mail catcher:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailcatcher
 </code></pre></div></div>
 <p>It runs on port <code class="language-plaintext highlighter-rouge">1080</code> by default, you can view the emails sent by the app on <a href="http://localhost:1080/" target="_blank">http://localhost:1080/</a>.</p>
 
 <h2 id="api">API</h2>
 
-<p>View the gem list:</p>
+<p>You can view the gem list with:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm gemset list
 </code></pre></div></div>
-<p>Install the gems:</p>
+
+<p>Install bundler to manage the API’s gems:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler
-bundle install
 </code></pre></div></div>
+
+<p>Install the gems:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+</code></pre></div></div>
+
 <p>Create the <code class="language-plaintext highlighter-rouge">application.yml</code> file inside <code class="language-plaintext highlighter-rouge">config/</code> and ask another developper for its content.</p>
 
 <p>Create and populate the database:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails db:create
 rails db:migrate
 rails db:seed
@@ -92,7 +105,7 @@ rails db:seed
 
 <p>To run the API, you can either:</p>
 <ul>
-  <li>Use the `rails command:
+  <li>Use the <code class="language-plaintext highlighter-rouge">rails</code> command:
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails s -b 'ssl://api.talentview.dev:3000?key=config/ssl/server.key&amp;cert=config/ssl/server.crt'
 </code></pre></div>    </div>
   </li>
@@ -106,7 +119,7 @@ rails db:seed
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails jobs:work
 </code></pre></div></div>
 
-<p>The API is now fully running. You can test webservices using Postman.</p>
+<p>The API is now fully running. You can test web services using <em>Postman</em>.</p>
 
 <h2 id="admin">Admin</h2>
 
