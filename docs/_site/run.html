@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=351566b0d9c0b6a1a6469f81cd7e0ce0db3d2629">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=57866f8bed8458fe67f64882ae2541486d90865b">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Run the TalentView apps locally | TalentView install and setup</title>
@@ -94,6 +94,13 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
 </code></pre></div></div>
 
+<p>You may encounter errors while installing certain gems (<em>e.g.</em> <code class="language-plaintext highlighter-rouge">pg</code>, <code class="language-plaintext highlighter-rouge">puma</code>, <code class="language-plaintext highlighter-rouge">mailcatcher</code>) due to some C compilation issue. This can happen in some MacOS versions (<em>e.g.</em> 10.15.6). The gems in error can be manually installed with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install puma:4.3.5 -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install pg -v '0.18.4' -- --with-cflags="-Wno-error=implicit-function-declaration"
+</code></pre></div></div>
+
 <p>Create the <code class="language-plaintext highlighter-rouge">application.yml</code> file inside <code class="language-plaintext highlighter-rouge">config/</code> and ask another developper for its content.</p>
 
 <p>Create and populate the database:</p>
@@ -151,9 +158,15 @@ MANAGE_URL=
 
 <p>Create a <code class="language-plaintext highlighter-rouge">.env.json</code> file at the root of the project and ask another developper for its content.</p>
 
-<p>Make sure you are using the correct Node version using nvm, then install the dependencies:</p>
+<p>Make sure you are using the correct Node version using nvm, then install <code class="language-plaintext highlighter-rouge">gulp</code> globally (this is done only once):</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g gulp
 </code></pre></div></div>
+
+<p>Then, in each project, install the dependencies:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+</code></pre></div></div>
+
 <p>You might encounter an error caused by Xcode. If so, run command below then reinstall the dependencies:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo xcode-select --switch /Library/Developer/CommandLineTools
 </code></pre></div></div>

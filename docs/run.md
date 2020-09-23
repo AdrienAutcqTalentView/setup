@@ -48,6 +48,14 @@ Install the gems:
 bundle install
 ```
 
+You may encounter errors while installing certain gems (*e.g.* `pg`, `puma`, `mailcatcher`) due to some C compilation issue. This can happen in some MacOS versions (*e.g.* 10.15.6). The gems in error can be manually installed with:
+
+```
+gem install puma:4.3.5 -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install pg -v '0.18.4' -- --with-cflags="-Wno-error=implicit-function-declaration"
+```
+
 Create the `application.yml` file inside `config/` and ask another developper for its content.
 
 Create and populate the database:
@@ -108,10 +116,17 @@ The Manager and Funnel apps both run on the same version of Node (8.11.3), thus 
 
 Create a `.env.json` file at the root of the project and ask another developper for its content.
 
-Make sure you are using the correct Node version using nvm, then install the dependencies:
+Make sure you are using the correct Node version using nvm, then install `gulp` globally (this is done only once):
 ```
 npm install -g gulp
 ```
+
+Then, in each project, install the dependencies:
+
+```
+npm install
+```
+
 You might encounter an error caused by Xcode. If so, run command below then reinstall the dependencies:
 ```
 sudo xcode-select --switch /Library/Developer/CommandLineTools

@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=351566b0d9c0b6a1a6469f81cd7e0ce0db3d2629">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=57866f8bed8458fe67f64882ae2541486d90865b">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>SSL certificates | TalentView install and setup</title>
@@ -60,13 +60,15 @@
 127.0.0.1 manage.talentview.dev
 127.0.0.1 api.talentview.dev
 127.0.0.1 admin.talentview.dev
-127.0.0.1 http://talentview.talentview.dev.io/
+127.0.0.1 talentview.talentview.dev.io
 </code></pre></div></div>
-<p>Ask another developper for the SSL config files. Save them on your machine, for example under <code class="language-plaintext highlighter-rouge">~/local-ssh</code>.</p>
+
+<p>Note you need to use <code class="language-plaintext highlighter-rouge">sudo vi</code>.
+Ask another developper for the SSL config files. Save them on your machine, for example under <code class="language-plaintext highlighter-rouge">~/local-ssl</code>.</p>
 
 <p>Copy the <code class="language-plaintext highlighter-rouge">server.crt</code> and <code class="language-plaintext highlighter-rouge">server.key</code> files in each corresponding repository root folder, except for the API, for which they go under <code class="language-plaintext highlighter-rouge">config/ssl/</code>.</p>
 
-<p>Open the <strong>Keychain Access</strong> app → <em>My Certificates</em>, and place there the <code class="language-plaintext highlighter-rouge">rootCA.perm</code> files of each project. Double-click on each certificate file → <em>Trust</em> → <em>Always trust</em>. Fill in your session password every time it is required.</p>
+<p>Open the <strong>Keychain Access</strong> app → <em>Certificates</em>, and place there the <code class="language-plaintext highlighter-rouge">rootCA.perm</code> files of each project. Double-click on each certificate file. Under <em>Trust</em>, <em>When using this certificate</em> → <em>Always trust</em>. Fill in your session password every time it is required.</p>
 
 <p> </p>
 
