@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=57866f8bed8458fe67f64882ae2541486d90865b">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Run the TalentView apps locally | TalentView install and setup</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Run the TalentView apps locally" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Set up your developer environment!" />
+<meta property="og:description" content="Set up your developer environment!" />
+<link rel="canonical" href="http://localhost:5000/run.html" />
+<meta property="og:url" content="http://localhost:5000/run.html" />
+<meta property="og:site_name" content="TalentView install and setup" />
+<script type="application/ld+json">
+{"url":"http://localhost:5000/run.html","headline":"Run the TalentView apps locally","description":"Set up your developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <a href="./index.html">
+      <img src="assets/images/talentview_logo_white.png" class="logo-image">
+    </a>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <!-- <a id="forkme_banner" href="https://github.com/AdrienAutcqTalentView/test">View on GitHub</a> -->
+          
+
+          <h1 id="project_title">TalentView install and setup</h1>
+          <h2 id="project_tagline">Set up your developer environment!</h2>
+
+          
+            <!-- <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/AdrienAutcqTalentView/test/zipball/gh-pages">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/AdrienAutcqTalentView/test/tarball/gh-pages">Download this project as a tar.gz file</a>
+            </section> -->
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="run-the-talentview-apps-locally">Run the TalentView apps locally</h1>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<h3 id="mongo">Mongo</h3>
+
+<p>Run Mongo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongod --dbpath /usr/local/var/mongodb
+</code></pre></div></div>
+
+<h3 id="mail-catcher">Mail catcher</h3>
+
+<p>With the mail catcher, you can view all the emails sent by the apps. This is useful to access validation links sent via email.</p>
+
+<p>Install the mail catcher using:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install mailcatcher
+</code></pre></div></div>
+
+<p>Run the mail catcher:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailcatcher
+</code></pre></div></div>
+<p>It runs on port <code class="language-plaintext highlighter-rouge">1080</code> by default, you can view the emails sent by the app on <a href="http://localhost:1080/" target="_blank">http://localhost:1080/</a>.</p>
+
+<h2 id="api">API</h2>
+
+<p>You can view the gem list with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm gemset list
+</code></pre></div></div>
+
+<p>Install bundler to manage the API’s gems:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler
+</code></pre></div></div>
+
+<p>Install the gems:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+</code></pre></div></div>
+
+<p>You may encounter errors while installing certain gems (<em>e.g.</em> <code class="language-plaintext highlighter-rouge">pg</code>, <code class="language-plaintext highlighter-rouge">puma</code>, <code class="language-plaintext highlighter-rouge">mailcatcher</code>) due to some C compilation issue. This can happen in some MacOS versions (<em>e.g.</em> 10.15.6). The gems in error can be manually installed with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install puma:4.3.5 -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install pg -v '0.18.4' -- --with-cflags="-Wno-error=implicit-function-declaration"
+</code></pre></div></div>
+
+<p>Create the <code class="language-plaintext highlighter-rouge">application.yml</code> file inside <code class="language-plaintext highlighter-rouge">config/</code> and ask another developper for its content.</p>
+
+<p>Create and populate the database:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails db:create
+rails db:migrate
+rails db:seed
+</code></pre></div></div>
+
+<p>To run the API, you can either:</p>
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">rails</code> command:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails s -b 'ssl://api.talentview.dev:3000?key=config/ssl/server.key&amp;cert=config/ssl/server.crt'
+</code></pre></div>    </div>
+  </li>
+  <li>Execute the <code class="language-plaintext highlighter-rouge">boot.sh</code> file (which contains the command above):
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./boot.sh
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>In a second terminal, run the following command that handles slow processes of the API:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails jobs:work
+</code></pre></div></div>
+
+<p>The API is now fully running. You can test web services using <em>Postman</em>.</p>
+
+<h2 id="admin">Admin</h2>
+
+<p>Copy the <code class="language-plaintext highlighter-rouge">.env.example</code> file into a new <code class="language-plaintext highlighter-rouge">.env</code> file at the root of the project and ask another developper to provide you with the content:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API_URL=
+AWS_S3_URL=
+AWS_S3_BUCKET=
+AWS_S3_REGION=
+CAMERATAG_APPLICATION_UUID=
+ENVIRONMENT=
+FILESTACK_API_KEY=
+FUNNEL_DOMAIN=
+MANAGE_URL=
+</code></pre></div></div>
+
+<p>Make sure you are using the correct Node version (13.12.0) using nvm, then install the dependencies:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+</code></pre></div></div>
+<p>Run the app:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run dev
+</code></pre></div></div>
+
+<p>Go to <a href="&quot;https://admin.talentview.dev:4002&quot;" target="_blank">http://admin.talentview.test:4002</a>.</p>
+
+<h2 id="manager-and-funnel">Manager and Funnel</h2>
+
+<p>The Manager and Funnel apps both run on the same version of Node (8.11.3), thus are run using the same commands.</p>
+
+<p>Create a <code class="language-plaintext highlighter-rouge">.env.json</code> file at the root of the project and ask another developper for its content.</p>
+
+<p>Make sure you are using the correct Node version using nvm, then install <code class="language-plaintext highlighter-rouge">gulp</code> globally (this is done only once):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g gulp
+</code></pre></div></div>
+
+<p>Then, in each project, install the dependencies:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+</code></pre></div></div>
+
+<p>You might encounter an error caused by Xcode. If so, run command below then reinstall the dependencies:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo xcode-select --switch /Library/Developer/CommandLineTools
+</code></pre></div></div>
+<p>You might also encounter an error caused by <code class="language-plaintext highlighter-rouge">jspm</code>. If so, create a <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token" title="link to tutorial" target="_blank">token</a> on GitHub and use it instead of the password when running the following command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jspm registry config github
+</code></pre></div></div>
+<p>Run the app:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gulp serve
+</code></pre></div></div>
+
+<p>Go to <a href="&quot;https://manage.talentview.dev:4001&quot;" target="_blank">https://manage.talentview.dev:4001</a> and <a href="&quot;https://talentview.talentview.dev.io:4000/&quot;" target="_blank">https://talentview.talentview.dev.io:4000</a>.</p>
+
+<p> </p>
+
+<h1 id="congrats-you-reached-the-end-of-the-tutorial-">Congrats! You reached the end of the tutorial :)</h1>
+
+<p> </p>
+
+<div class="row">
+  <div class="col-xs-6">
+    <a href="./ssl.html" type="button" class="btn btn-light btn-lg btn-block">
+      &larr; SSL certificates
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-6">
+    <a href="./index.html" class="btn btn-light btn-lg btn-block">
+      Return to index
+    </a>
+  </div>
+</div>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">TalentView install and setup maintained by <a href="https://github.com/AdrienAutcqTalentView">AdrienAutcqTalentView</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

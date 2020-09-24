@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=57866f8bed8458fe67f64882ae2541486d90865b">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Basic installs | TalentView install and setup</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Basic installs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Set up your developer environment!" />
+<meta property="og:description" content="Set up your developer environment!" />
+<link rel="canonical" href="http://localhost:5000/install.html" />
+<meta property="og:url" content="http://localhost:5000/install.html" />
+<meta property="og:site_name" content="TalentView install and setup" />
+<script type="application/ld+json">
+{"url":"http://localhost:5000/install.html","headline":"Basic installs","description":"Set up your developer environment!","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <a href="./index.html">
+      <img src="assets/images/talentview_logo_white.png" class="logo-image">
+    </a>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <!-- <a id="forkme_banner" href="https://github.com/AdrienAutcqTalentView/test">View on GitHub</a> -->
+          
+
+          <h1 id="project_title">TalentView install and setup</h1>
+          <h2 id="project_tagline">Set up your developer environment!</h2>
+
+          
+            <!-- <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/AdrienAutcqTalentView/test/zipball/gh-pages">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/AdrienAutcqTalentView/test/tarball/gh-pages">Download this project as a tar.gz file</a>
+            </section> -->
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="basic-installs">Basic installs</h1>
+
+<h2 id="apps-to-install">Apps to install</h2>
+
+<p>If you just received an out-of-the-box Mac, you need a few apps:</p>
+
+<ul>
+  <li>Xcode (from AppStore)</li>
+  <li>Google Chrome (as a suggested browser)</li>
+  <li>Sublime Text (as a suggested IDE)</li>
+</ul>
+
+<h2 id="homebrew">Homebrew</h2>
+
+<p>Homebrew is MacOS’ package manager. Install it by running:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+</code></pre></div></div>
+
+<h2 id="ide-configuration">IDE configuration</h2>
+
+<p>This section is useful only if you intend to use <strong>Sublime Text</strong> as your IDE.</p>
+
+<p>First of all, you need to install the <strong>Package Control</strong> plugin. Then, type <code class="language-plaintext highlighter-rouge">CMD</code> + <code class="language-plaintext highlighter-rouge">SHIFT</code> + <code class="language-plaintext highlighter-rouge">P</code>, then <code class="language-plaintext highlighter-rouge">Package Control: Install Package</code> to open the package installation menu.</p>
+
+<p>Here are the interesting packages to work with when on a <strong>AngularJS</strong> project:</p>
+
+<blockquote>
+  <p>A File Icon, All complete, Angular CLI, AngularJS, AngularJS snippets, Babel, BracketHighlighter, ColorPicker, CSS3, DocBlockr, Emmet, Git, GitGutter, JSCS-Formatter, JSPrettier, MarkdownPreview, Material Theme, Sass, SCSS, Sidebar Enhancement, Stylus, SublimeLinter, SublimeREPL, Terminal, TrailingSpaces.</p>
+</blockquote>
+
+<p>Finally, set up your configuration file to use the TalentView standard. Type <code class="language-plaintext highlighter-rouge">CMD</code> + <code class="language-plaintext highlighter-rouge">,</code> and paste the following on the user side:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"auto_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"auto_complete_commit_on_tab"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"auto_complete_delay"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bold_folder_labels"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"color_scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Packages/Material Theme/schemes/Material-Theme-Palenight.tmTheme"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"draw_white_space"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ensure_newline_at_eof_on_save"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"folder_exclude_patterns"</span><span class="p">:</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"node_modules"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jspm_packages"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bower_components"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">".git"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">".sass-cache"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">".tmp"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"font_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"highlight_modified_tabs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ignored_packages"</span><span class="p">:</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Vintage"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"rulers"</span><span class="p">:</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="mi">80</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Material-Theme.sublime-theme"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="others">Others</h2>
+
+<h3 id="postman-optional">Postman (optional)</h3>
+
+<p>Postman is usefull to test the web services coming from the API. You can download it from <a href="&quot;https://www.postman.com/downloads/&quot;" target="_blank">here</a>.</p>
+
+<h3 id="pimp-your-terminal-optional">Pimp your terminal (optional)</h3>
+
+<p>You can improve you terminal’s colors and theme by using <strong>Oh My Zsh</strong>. Details <a href="https://blog.edenpulse.com/boostez-votre-terminal-sous-osx/" title="link to website" target="_blank">here</a>.</p>
+
+<h3 id="team-communication-tools">Team communication tools</h3>
+
+<p>At <strong>TalentView</strong>, we use the following communication tools:</p>
+<ul>
+  <li>Slack</li>
+  <li>Discord</li>
+</ul>
+
+<p> </p>
+
+<div class="row">
+  <div class="col-xs-6">
+    <a href="./index.html" type="button" class="btn btn-light btn-lg btn-block">
+      &larr; Return to index
+    </a>
+  </div>
+  &nbsp;
+  <div class="col-xs-6">
+    <a href="./clone-repos.html" class="btn btn-light btn-lg btn-block">
+      Cloning repositories &rarr;
+    </a>
+  </div>
+</div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">TalentView install and setup maintained by <a href="https://github.com/AdrienAutcqTalentView">AdrienAutcqTalentView</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

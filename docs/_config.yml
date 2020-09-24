@@ -1,0 +1,6 @@
+title: TalentView install and setup
+description: Set up your developer environment!
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-slate
+port: 5000
